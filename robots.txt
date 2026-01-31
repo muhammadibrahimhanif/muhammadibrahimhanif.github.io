@@ -1,0 +1,26 @@
+# robots.txt for Toko Gas Bu Siti
+# Generated on 2026-01-31
+
+# Allow all robots
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://tokogasbusiti.store/sitemap.xml
+
+# Cache control
+Cache-control: public

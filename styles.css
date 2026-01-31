@@ -1,0 +1,872 @@
+/* ========================================
+   WARUNG TOKO GAS BU SITI
+   Professional Gas & Water Store Website
+   ======================================== */
+
+/* Premium Color Palette & Variables - Gas Theme (Green) */
+:root {
+  --primary-blue: #16a34a;
+  --primary-dark: #15803d;
+  --secondary-cyan: #22c55e;
+  --accent-gold: #ffb800;
+  --dark-navy: #14532d;
+  --text-dark: #1a202c;
+  --text-gray: #4a5568;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  color: var(--text-dark);
+  background: var(--light-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sora", "Plus Jakarta Sans", sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   PREMIUM UTILITIES
+   ======================================== */
+
+/* Premium Gradient Backgrounds - Gas Theme */
+.premium-gradient {
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+}
+
+.dark-gradient {
+  background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+}
+
+/* Glass Morphism Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Premium Shadows - Gas Theme */
+.premium-shadow {
+  box-shadow: 0 20px 60px -15px rgba(22, 163, 74, 0.3);
+}
+
+.premium-shadow-lg {
+  box-shadow: 0 30px 80px -20px rgba(22, 163, 74, 0.4);
+}
+
+/* Premium Button Hover Effect */
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.premium-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.premium-button:hover::before {
+  left: 100%;
+}
+
+.premium-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Premium Card Hover Effects - Gas Theme */
+.premium-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.premium-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgba(22, 163, 74, 0.25);
+}
+
+/* Animated Underline - Gas Theme */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Premium Badge */
+.premium-badge {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #ff8800 100%);
+  box-shadow: 0 4px 15px rgba(255, 184, 0, 0.4);
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ========================================
+   HERO SECTION ENHANCED ANIMATIONS
+   ======================================== */
+
+.hero-section {
+  position: relative;
+}
+
+/* Animated Gradient Background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #14532d, #166534, #15803d, #14532d);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+  opacity: 0.6;
+}
+
+/* Wave line animations */
+@keyframes wave-motion {
+  0%,
+  100% {
+    d: path("M0,150 Q300,100 600,150 T1200,150");
+  }
+  25% {
+    d: path("M0,150 Q300,120 600,150 T1200,150");
+  }
+  50% {
+    d: path("M0,150 Q300,180 600,150 T1200,150");
+  }
+  75% {
+    d: path("M0,150 Q300,120 600,150 T1200,150");
+  }
+}
+
+.wave-line {
+  animation: wave-motion 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.3));
+}
+
+/* Bokeh light animations */
+@keyframes bokeh-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(30px, -20px) scale(1.1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(0.9);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translate(20px, 20px) scale(1.05);
+    opacity: 0.2;
+  }
+}
+
+.animate-bokeh {
+  animation: bokeh-float 8s ease-in-out infinite;
+}
+
+/* Shimmer/Shine effect - luxury premium look */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+/* Animated accent dots pattern */
+@keyframes dot-scale {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.animate-dots-pattern {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  opacity: 0.6;
+}
+
+.accent-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(34, 197, 94, 0.8);
+  border-radius: 50%;
+  animation: dot-scale 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+/* Pulse ring animations */
+@keyframes pulse-expand {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 30px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-pulse-ring {
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse-expand 2s infinite;
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background: rgba(34, 197, 94, 0.8);
+  border-radius: 50%;
+}
+
+/* Dynamic color cycling for gradient */
+@keyframes color-cycle {
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  33% {
+    filter: hue-rotate(60deg) saturate(1.2);
+  }
+  66% {
+    filter: hue-rotate(120deg) saturate(1.1);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1);
+  }
+}
+
+.animate-color-cycle {
+  animation: color-cycle linear infinite;
+}
+
+/* Tech grid lines */
+@keyframes grid-animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 60px;
+  }
+}
+
+.tech-grid-lines {
+  background-image: linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-animate 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Floating particles effect */
+.hero-particles {
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: float-particle 6s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+@keyframes float-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) translateX(50px);
+  }
+}
+
+/* Rotating geometric shapes */
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate-slow linear infinite;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-cyan)
+  );
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-dark), #00a8cc);
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img.loaded,
+img[src] {
+  opacity: 1;
+}
+
+/* ========================================
+   HEADER & NAVIGATION IMPROVEMENTS
+   ======================================== */
+
+header {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  min-height: 56px;
+  transform: translateY(0);
+}
+
+@media (min-width: 1024px) {
+  header {
+    min-height: 60px;
+  }
+}
+
+header.scrolled {
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+header.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo text truncation */
+header .truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Desktop menu hover effect */
+header .animated-underline {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+header .animated-underline::after {
+  bottom: -2px;
+  height: 2px;
+}
+
+/* Refined spacing */
+header nav {
+  max-width: 100%;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 640px) {
+  header nav {
+    min-height: 50px;
+  }
+
+  header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 640px) and (max-width: 1023px) {
+  header nav {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+/* Desktop optimization */
+@media (min-width: 1024px) {
+  header nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+/* Extra small devices (< 375px) */
+@media (max-width: 374px) {
+  header nav {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  header .font-heading {
+    font-size: 13px;
+  }
+
+  header .text-\[10px\] {
+    font-size: 9px;
+  }
+}
+
+/* ========================================
+   MOBILE MENU - SIMPLIFIED & RELIABLE
+   ======================================== */
+
+/* Ensure menu is hidden by default with inline styles */
+#mobileMenuPanel {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#mobileMenuPanel::-webkit-scrollbar {
+  width: 4px;
+}
+
+#mobileMenuPanel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#mobileMenuPanel::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 2px;
+}
+
+/* Prevent body scroll when menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* ========================================
+   WHATSAPP FLOATING BUTTON
+   ======================================== */
+
+.wa-float-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wa-float-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.wa-main-button {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wa-main-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+}
+
+.wa-main-button:active {
+  transform: scale(0.95);
+}
+
+.wa-icon {
+  font-size: 32px;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.wa-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.wa-ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: ripple 2s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.wa-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: linear-gradient(135deg, #ff4757 0%, #e84118 100%);
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 7px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+  z-index: 3;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.wa-tooltip::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: white;
+}
+
+.wa-float-wrapper:hover .wa-tooltip {
+  opacity: 1;
+  right: 80px;
+}
+
+.wa-online {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  background: #00ff00;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 3;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  p,
+  li,
+  span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* WhatsApp Button Mobile */
+  .wa-float-button {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .wa-main-button {
+    width: 56px;
+    height: 56px;
+  }
+
+  .wa-icon {
+    font-size: 28px;
+  }
+
+  .wa-tooltip {
+    display: none;
+  }
+
+  .wa-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.wa-main-button:focus,
+a:focus,
+button:focus {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 4px;
+}
+
+/* Touch-friendly elements on mobile */
+@media (max-width: 768px) {
+  a,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  header,
+  footer,
+  .fixed,
+  .wa-float-button {
+    display: none;
+  }
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+/* Prevent horizontal scroll */
+body,
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive iframe wrapper */
+.responsive-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
